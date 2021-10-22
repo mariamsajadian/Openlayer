@@ -17,12 +17,10 @@ function init() {
 
 
 
-  // Australian Cities GeoJSON
+  // NetherlandsCities GeoJSON
   const NetherlandsCitiesStyle = function (feature) {
-    //  console.log(feature);//feature.getKeys or feature.coordinate
     let cityID = feature.get('id');
     let cityIDString = cityID.toString();
-    // console.log(cityID.toString());
     const styles = [
       new ol.style.Style({
         image: new ol.style.Circle({
@@ -92,39 +90,27 @@ function init() {
 
   })
   map.addLayer(NetherlandsCitiesLayers);
-  // console.log ( NetherlandsCitiesLayers);
+
 
 
   // Map Features Click Logic
-
-  // cityname and cityimage and column-navigation
   const navElements = document.querySelector('.column-navigation');
-  // console.log(document.querySelector('.column-navigation'));
   const cityNameElement = document.getElementById('cityname');
-  // console.log(document.getElementById('cityname'));
   const cityImageElement = document.getElementById('cityimage');
-  // console.log(document.getElementById('cityimage'));
   const mapView = map.getView(); // access to map view
-  // detect base onn their pixel
   map.on('singleclick', function (evt) {
     map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
-      // console.log(feature);
       let featureName = feature.get('City Name');
-      // console.log(featureName);
       let navElement = navElements.children.namedItem(featureName);
-      // console.log(navElement);
       mainLogic(feature, navElement);
     })
   })
 
   function mainLogic(feature, clickedAnchorElement) {
-    //*******Re-assign active class to the click emenent
+    //Re-assign active class to the click emenent
     let currentActiveStyleElement = document.querySelector('.active');
-    // console.log(currentActiveStyleElement);
     currentActiveStyleElement.className = currentActiveStyleElement.className.replace('active', ' ');
     clickedAnchorElement.className = 'active';
-    // console.log (clickedAnchorElement.className)
-
     let currentActiveStyledElement = document.querySelector('.active');
     currentActiveStyledElement.className = currentActiveStyledElement.className.replace('active', '');
     clickedAnchorElement.className = 'active';
@@ -157,21 +143,12 @@ function init() {
 
   }
   // Navigation Button Logic
-  // console.log(navElements);
-  // first get anchor elements
   const anchorNavElements = document.querySelectorAll('.column-navigation > a');
-  // console.log(anchorNavElements);
   for (let anchorNavElement of anchorNavElements) {
-    // console.log(anchorNavElement);
-    //attach the anchors to listerners
     anchorNavElement.addEventListener('click', function (e) {
-
-      // console.log(e.currentTarget);
-      let clickedAnchorElement = e.currentTarget;// get each anchor sperately
-      let clickedAnchorElementID = clickedAnchorElement.id;//name of cities
-      // console.log(clickedAnchorElementID);
-      let NetherlandsCitiesFeatures = NetherlandsCitiesLayers.getSource().getFeatures();// go to json file and get data and features
-      // console.log(NetherlandsCitiesFeatures);
+      let clickedAnchorElement = e.currentTarget;
+      let clickedAnchorElementID = clickedAnchorElement.id;
+      let NetherlandsCitiesFeatures = NetherlandsCitiesLayers.getSource().getFeatures();
       NetherlandsCitiesFeatures.forEach(function (feature) {
                 let featureCityName = feature.get('City Name');
                 console.log(featureCityName);
@@ -183,18 +160,10 @@ function init() {
         if(clickedAnchorElementID === 'Home'){
               mainLogic(undefined, clickedAnchorElement)
         }
-
-
-
       })
-
-
     }
 // features hover logic 
-// with hover on the features(not pixels) show the name of city and change cursor to pointer
 const popoverTextElement = document.getElementById('popover-text');
-// console.log(popoverTextElement);
-// use  overlay to distinguish between pixels and features
 const popoverTextLayer = new ol.Overlay({
   element: popoverTextElement,
   positioning: 'bottom-center',
@@ -202,30 +171,17 @@ const popoverTextLayer = new ol.Overlay({
 })
 map.addOverlay(popoverTextLayer);
 //when hover see whether there is feature or pixel
-//hasFeatureAtPixel:Detect if features intersect a pixel on the viewport. Layers included in the detection can be configured through 
-//https://gis.stackexchange.com/questions/252946/what-are-the-possible-listeners-and-event-types-for-an-openlayers-map-ol-map
-
 map.on('pointermove', function(evt){
   let isFeatureAtPixel = map.hasFeatureAtPixel(evt.pixel);
-  // console.log(isFeatureAtPixel);
-  // console.log(evt);
-  // if feature is true do this
   if(isFeatureAtPixel){
-    // console.log('there is a feature');
     let featureAtPixel = map.getFeaturesAtPixel(evt.pixel);
-    // console.log(featureAtPixel[0].get('City Name'));// it considers value only
-    let featureName = featureAtPixel[0].get('City Name');// get value
-    popoverTextLayer.setPosition(evt.coordinate);//  give a position in container 
-    popoverTextElement.innerHTML = featureName;// connect to container
-    //change pointer using ol-viewport in default html
-    // console.log(map.getViewport().style);// not Style SSS no sssss and get cursor.
-    map.getViewport().style.cursor= 'pointer';// if hover on the feature change the default style to pointer 
-
-
+    let featureName = featureAtPixel[0].get('City Name');
+    popoverTextLayer.setPosition(evt.coordinate);
+    popoverTextElement.innerHTML = featureName;
+    map.getViewport().style.cursor= 'pointer';
   } else{
-    // console.log(' pixel');
-    popoverTextLayer.setPosition(undefined);// if point on pixel remove the name of the city
-    map.getViewport().style.cursor= '';// if hover on the pixel stay the default
+    popoverTextLayer.setPosition(undefined);
+    map.getViewport().style.cursor= '';
   }
 })
 }
