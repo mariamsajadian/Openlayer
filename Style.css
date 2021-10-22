@@ -34,20 +34,19 @@ body{
     color: rgb(25, 77, 248);
     font-size: 15px;}
 .column-navigation a:hover{
-        background-color: rgb(219, 157, 157);
+    background-color: rgb(219, 157, 157);
 
     }
+
 .active{
-        /* background-color:  #f3edf0; */
-        margin: 0;
-        top:30px;
-        bottom: 30px;
+    background-color: rgb(219, 157, 157);
+
     }
 .column-menu{
         height: 100%;
         width:100%;
         padding: 1px;
-        /* background-color: #f1f1f1; */
+        background-color: #f1f1f1;
     }
 
     /* image */
