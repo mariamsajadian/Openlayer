@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Style.css">
+    <link rel="stylesheet" href="./libs/v6.0.0-dist/ol.css">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-1">
+            <div class="column-navigation">
+                <a title='Home' id='Home' class='active'><i class="fas fa-home" id='Home'></i></a>
+                <a title='Amsterdam' id='Amsterdam' class='active'><i class="far fa-circle" id='Amsterdam'></i>Amsterdam</a>
+                <a title='Rotterdam' id='Rotterdam' class='active'><i class="far fa-circle" id='Rotterdam'></i>Rotterdam</a>
+                <a title='Then Hague' id='Then Hague' class='active'><i class="far fa-circle" id='Then Hague'></i>Then Hague</a>
+                <a title='Delft' id='Delft' class='active'><i class="far fa-circle" id='Delft'></i>Delft</a>
+                <a title='Utrecht' id='Utrecht' class='active'><i class="far fa-circle" id='Utrecht'></i>Utrecht</a>
+                <a title='Amsfoort' id='Amsfoort' class='active'><i class="far fa-circle" id='Amsfoort'></i>Amsfoort</a>
+                <a title='Arnhem' id='Arnhem' class='active'><i class="far fa-circle" id='Arnhem'></i>Arnhem</a>
+                <a title='Zwolle' id='Zwolle' class='active'><i class="far fa-circle" id='Zwolle'></i>Zwolle</a>
+                <a title='Groningen' id='Groningen' class='active'><i class="far fa-circle" id='Groningen'>Groningen</i></a>
+                <a title='Sneek' id='Sneek' class='active'><i class="far fa-circle" id='Sneek'></i>Sneek</a>
+                <a title='Leeuwarden' id='Leeuwarden' class='active'><i class="far fa-circle" id='Leeuwarden'></i>Leeuwarden</a>
+            </div>
+        </div>
+        <div class='grid-2'>
+            <div class="column-map" id="openlayer-map"></div>
+        </div>
+        <div class='grid-3'>
+            <div class= 'column-menu' id='menu-information'>
+                <p id='cityname'>Welcome to the Netherlands Tour Map</p> 
+                <img id='cityimage' src="./data/City_images/flag.jpg"alt="flag">
+            </div>
+
+        </div>
+    </div>       
+    </div>
+<!-- for overlay we need create html outside of grid container -->
+    <div class= "popover-information">
+        <p id = 'popover-text'></p>
+    </div>
+    <!-- Json of cities -->
+    <script src="https://kit.fontawesome.com/b4472a9d37.js" crossorigin="anonymous"></script> 
+    <script src='./libs/v6.0.0-dist/ol.js'></script>
+    <script src='./main.js'></script>   
+</body></html>

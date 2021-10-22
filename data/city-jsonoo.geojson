@@ -1,0 +1,170 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 1,
+        "City Name": "Amsterdam",
+        "image": "Amsterdam-img"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8937225341796875,
+          52.369730195560706
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 2,
+        "City Name": "Rotterdam",
+        "image": "Rotterdam-img"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.4515228271484375,
+          51.922037839286666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 3,
+        "City Name": "Then Hague",
+        "image": "Then Hague-img"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.302864074707031,
+          52.078662015920195
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 4,
+        "City Name": "Delft",
+        "image": "Delft-img"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.3608856201171875,
+          52.00771005263849
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 5,
+        "City Name": "Utrecht",
+        "image": "Utrecht-img"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.110015869140625,
+          52.094062282906954
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 6,
+        "City Name": "Amsfoort",
+        "image": "Amsfoort-img"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.387420654296875,
+          52.15371445951162
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 7,
+        "City Name": "Arnhem",
+        "image": "Arnhem-img"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.903778076171875,
+          51.98065110068555
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 8,
+        "City Name": "Zwolle",
+        "image": "Zwolle-img"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.101531982421875,
+          52.507027222951635
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 9,
+        "City Name": "Groningen",
+        "image": "Groningen-img"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.573944091796875,
+          53.21425694166793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 10,
+        "City Name": "Sneek",
+        "image": "Sneek-img"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.6613922119140625,
+          53.033781297849195
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": 11,
+        "City Name": "Leeuwarden",
+        "image": "Leeuwarden-img"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.7932281494140625,
+          53.19883491520717
+        ]
+      }
+    }
+  ]
+}
